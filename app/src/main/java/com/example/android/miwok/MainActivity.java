@@ -19,6 +19,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -28,24 +29,37 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-    }
 
-    public void openActivity(View v) {
-        switch (v.getId()) {
-            case R.id.colors:
-                intent = new Intent(MainActivity.this, ColorsActivity.class);
-                break;
-            case R.id.family:
-                intent = new Intent(MainActivity.this, FamilyActivity.class);
-                break;
-            case R.id.numbers:
-                intent = new Intent(MainActivity.this, NumbersActivity.class);
-                break;
-            case R.id.phrases:
-                intent = new Intent(MainActivity.this, PhrasesActivity.class);
-                break;
-        }
+        findViewById(R.id.colors).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, ColorsActivity.class);
+                startActivity(intent);
+            }
+        });
 
-        startActivity(intent);
+        findViewById(R.id.family).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, FamilyActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        findViewById(R.id.numbers).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, NumbersActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        findViewById(R.id.phrases).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, PhrasesActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 }
