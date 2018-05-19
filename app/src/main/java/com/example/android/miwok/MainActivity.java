@@ -23,8 +23,6 @@ import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
-    Intent intent = null;   // declare only one time
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
