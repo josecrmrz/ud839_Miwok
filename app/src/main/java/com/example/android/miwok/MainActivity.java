@@ -28,33 +28,37 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        findViewById(R.id.colors).setOnClickListener(new View.OnClickListener() {
+        findViewById(R.id.colors).setOnClickListener(new TextView.OnClickListener() {
             @Override
             public void onClick(View v) {
+                // Create a new intent to open the {@link ColorsActivity}
                 Intent intent = new Intent(MainActivity.this, ColorsActivity.class);
                 startActivity(intent);
             }
         });
 
-        findViewById(R.id.family).setOnClickListener(new View.OnClickListener() {
+        findViewById(R.id.family).setOnClickListener(new TextView.OnClickListener() {
             @Override
             public void onClick(View v) {
+                // Create a new intent to open the {@link FamilyActivity}
                 Intent intent = new Intent(MainActivity.this, FamilyActivity.class);
                 startActivity(intent);
             }
         });
 
-        findViewById(R.id.numbers).setOnClickListener(new View.OnClickListener() {
+        findViewById(R.id.numbers).setOnClickListener(new TextView.OnClickListener() {
             @Override
             public void onClick(View v) {
+                // Create a new intent to open the {@link NumbersActivity}
                 Intent intent = new Intent(MainActivity.this, NumbersActivity.class);
                 startActivity(intent);
             }
         });
 
-        findViewById(R.id.phrases).setOnClickListener(new View.OnClickListener() {
+        findViewById(R.id.phrases).setOnClickListener(new TextView.OnClickListener() {
             @Override
             public void onClick(View v) {
+                // Create a new intent to open the {@link PhrasesActivity}
                 Intent intent = new Intent(MainActivity.this, PhrasesActivity.class);
                 startActivity(intent);
             }
