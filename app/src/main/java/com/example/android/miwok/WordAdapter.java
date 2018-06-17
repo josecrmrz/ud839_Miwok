@@ -32,7 +32,7 @@ public class WordAdapter extends ArrayAdapter<Word> {
         ((TextView) listItemView.findViewById(R.id.englishTextView)).setText(currentWord.getDefaultTranslation());
         ((TextView) listItemView.findViewById(R.id.miwokTextView)).setText(currentWord.getMiwokTranslation());
 
-        if (currentWord.getImageResourceId() > 0) {
+        if (currentWord.hasImage()) {
             ((ImageView) listItemView.findViewById(R.id.image)).setImageResource(currentWord.getImageResourceId());
         } else {
             listItemView.findViewById(R.id.image).setVisibility(View.GONE);
