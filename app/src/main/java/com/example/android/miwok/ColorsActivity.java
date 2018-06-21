@@ -39,7 +39,7 @@ public class ColorsActivity extends AppCompatActivity {
         words.add(new Word("mustard yellow", "chiwiiṭә", R.drawable.color_mustard_yellow));
 
         // Use Custom Array Adapter
-        WordAdapter numbersAdapter = new WordAdapter(this, words);
+        WordAdapter numbersAdapter = new WordAdapter(this, words, R.color.category_colors);
         ListView listView = findViewById(R.id.list);
 
         listView.setAdapter(numbersAdapter);
