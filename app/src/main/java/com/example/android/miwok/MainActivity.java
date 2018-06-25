@@ -15,11 +15,9 @@
  */
 package com.example.android.miwok;
 
-import android.content.Intent;
 import android.os.Bundle;
+import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
-import android.view.View;
-import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -28,40 +26,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        findViewById(R.id.colors).setOnClickListener(new TextView.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                // Create a new intent to open the {@link ColorsActivity}
-                Intent intent = new Intent(MainActivity.this, ColorsActivity.class);
-                startActivity(intent);
-            }
-        });
-
-        findViewById(R.id.family).setOnClickListener(new TextView.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                // Create a new intent to open the {@link FamilyActivity}
-                Intent intent = new Intent(MainActivity.this, FamilyActivity.class);
-                startActivity(intent);
-            }
-        });
-
-        findViewById(R.id.numbers).setOnClickListener(new TextView.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                // Create a new intent to open the {@link NumbersActivity}
-                Intent intent = new Intent(MainActivity.this, NumbersActivity.class);
-                startActivity(intent);
-            }
-        });
-
-        findViewById(R.id.phrases).setOnClickListener(new TextView.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                // Create a new intent to open the {@link PhrasesActivity}
-                Intent intent = new Intent(MainActivity.this, PhrasesActivity.class);
-                startActivity(intent);
-            }
-        });
+        ViewPager viewPager = findViewById(R.id.viewPager);
+        CategoryPageAdapter adapter = new CategoryPageAdapter(getSupportFragmentManager());
+        viewPager.setAdapter(adapter);
     }
 }
