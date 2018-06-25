@@ -1,5 +1,6 @@
 package com.example.android.miwok;
 
+import android.content.Context;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -7,10 +8,11 @@ import android.support.v4.app.FragmentPagerAdapter;
 
 public class CategoryPageAdapter extends FragmentPagerAdapter {
 
-    private String tabTitles[] = new String[]{"Numbers", "Family", "Colors", "Phrases"};
+    private Context mContext;
 
-    public CategoryPageAdapter(FragmentManager fm) {
+    public CategoryPageAdapter(FragmentManager fm, Context context) {
         super(fm);
+        mContext = context;
     }
 
     @Override
@@ -30,7 +32,16 @@ public class CategoryPageAdapter extends FragmentPagerAdapter {
     @Nullable
     @Override
     public CharSequence getPageTitle(int position) {
-        return tabTitles[position];
+        switch (position) {
+            case 0:
+                return mContext.getString(R.string.category_numbers);
+            case 1:
+                return mContext.getString(R.string.category_family);
+            case 2:
+                return mContext.getString(R.string.category_colors);
+            default:
+                return mContext.getString(R.string.category_phrases);
+        }
     }
 
     @Override

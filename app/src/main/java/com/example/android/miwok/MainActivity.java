@@ -28,7 +28,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         ViewPager viewPager = findViewById(R.id.viewPager);
-        CategoryPageAdapter adapter = new CategoryPageAdapter(getSupportFragmentManager());
+        CategoryPageAdapter adapter = new CategoryPageAdapter(getSupportFragmentManager(), this);
         viewPager.setAdapter(adapter);
 
         TabLayout tabLayout = findViewById(R.id.tabLayout);
